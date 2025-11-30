@@ -1,0 +1,31 @@
+services:
+  app:
+    image: rprakashdass/product-lister:latest
+    ports:
+        - "8080:8080"
+    networks:
+      - product-network
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: productdb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-product-data:/var/lib/postgresql/data
+    networks:
+      - product-network
+
+
+networks:
+  product-network:
+    driver: bridge
+
+
+volumes:
+  postgres-product-data:
