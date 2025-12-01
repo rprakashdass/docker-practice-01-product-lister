@@ -10,8 +10,8 @@ A containerized Spring Boot application with PostgreSQL database.
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/rprakashdass/product-lister.git
-cd product-lister
+git clone https://github.com/rprakashdass/docker-practice-01-product-lister.git
+cd docker-practice-01-product-lister
 ```
 
 2. Start the application:
